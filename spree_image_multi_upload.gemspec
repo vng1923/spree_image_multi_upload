@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_image_multi_upload'
   s.version     = '1.0.0'
   s.summary     = %q{Advanced product images uploader}
-  s.description = %q{Allow to upload several product images at the same time with drag&drop support}
+  s.description = %q{Allow to upload multi product images at the same time with drag&drop support}
   s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Huy Nguyen'

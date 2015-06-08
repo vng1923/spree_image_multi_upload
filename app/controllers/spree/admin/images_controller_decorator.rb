@@ -1,32 +1,32 @@
 Spree::Admin::ImagesController.class_eval do
 
   def create
-    #binding.pry
-    invoke_callbacks(:create, :before)
-    #@object.attributes = params[object_name]
-    @object.attachment = params[object_name][:attachment].first
+    
+    product = Spree::Product.where('slug' => params['product_id'])
+    params[object_name][:attachment].each do |attachment_object|
+      binding.pry
+      #@object.attributes = params[object_name]
+      product = Spree::Product.where('slug' => params['product_id'])
+      #@object = Spree::Image.create
+      #@object.viewable.product = product
+      #@object.viewable_id = product[0].id
 
-    if @object.save
-      invoke_callbacks(:create, :after)
-      result = {
-          :files => [
-              @object.to_jq_upload.merge({
-                  # TODO: this is a dirty hack. See model decorator TODO for details
-                  :edit_url => edit_admin_product_image_url(@object.viewable.product, @object),
-                  :delete_url => admin_product_image_url(@object.viewable.product , @object)
-              })
-          ]
-      }
-      respond_to do |format|
-        format.html { render :json => result, :content_type => 'text/html', :layout => false }
-        format.json { render json: result, status: :created }
-      end
-    else
-      respond_to do |format|
-        format.html { render :action => 'index' }
-        format.json { render :json => @object.errors, status: :unprocessable_entity, :layout => false }
-      end
+
+      image = Spree::Image.new
+      image.attachment = attachment_object
+      image.viewable_id = product[0].id
+      image.type = 'Spree::Image'
+      image.viewable_type = 'Spree::Variant'
+      image.save
+
+      #invoke_callbacks(:create, :before)
+      #@object.attachment = attachment_object
+      #@object.save
+      #invoke_callbacks(:create, :after)
+      
     end
+    redirect_to '/admin/products/' + product[0].slug + '/images' #admin_product_url(product)
+    
   end
 
   def multi_upload

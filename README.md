@@ -1,12 +1,12 @@
 Spree Image Multi Upload
 =====================
 
-Allow to upload several product images at the same time with drag&drop support.
+Allow to upload multi product images at the same time with drag&drop support.
 
 Requirements
 ------------
 
-Extension in master branch depends on Spree 1.3.x.
+Extension in master branch depends on Spree 2.3.x.
 
 
 Installation
