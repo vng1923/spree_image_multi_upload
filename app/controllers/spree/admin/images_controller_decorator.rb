@@ -1,6 +1,7 @@
 Spree::Admin::ImagesController.class_eval do
 
   def create
+    binding.pry
     invoke_callbacks(:create, :before)
     @object.attributes = params[object_name]
     @object.attachment = params[object_name][:attachment].first
