@@ -1,0 +1,36 @@
+<script id="template-upload" type="text/x-tmpl">
+  {% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-upload fade">
+    <td class="preview"><span class="fade"></span></td>
+    <td class="name"><span>{%=file.name%}</span></td>
+
+    {% if (file.error) { %}
+        <td class="error">
+          <span class="label label-important"><%= t(:error) %></span>
+          {%=locale.fileupload.errors[file.error] || file.error%}
+        </td>
+    {% } else if (o.files.valid) { %}
+        <td class="size">
+          <span>{%=o.formatFileSize(file.size)%}</span>
+        </td>
+    {% } %}
+
+    <td class="actions">
+
+      {% if (!o.options.autoUpload) { %}
+      <span class="start">
+        <button class="button icon-upload">{%=locale.fileupload.start%}</button>
+      </span>
+      {% } %}
+
+      {% if (!i) { %}
+      <span class="cancel">
+        <button class="button icon-ban-circle">{%=locale.fileupload.cancel%}</button>
+      </span>
+      {% } %}
+
+    </td>
+
+  </tr>
+  {% } %}
+</script>

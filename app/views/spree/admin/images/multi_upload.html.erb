@@ -1,0 +1,47 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => {:target => @product} %>
+
+<%= form_for [:admin, @product, @image], :html => {:multipart => true, :id => "fileupload", :method => :post} do |f| %>
+    <fieldset data-hook="new_product">
+      <legend align="center"><%= t('multi_upload.title') %></legend>
+
+      <div class="row fileupload-buttonbar">
+        <div data-hook="variant" class="field">
+          <%= f.label Spree::Variant.model_name.human %>
+          <br>
+          <%= f.select :viewable_id, @variants, {}, {:class => 'select2'} %>
+        </div>
+
+        <span class="icon-plus button fileinput-button">
+            <%= t('multi_upload.add_files') %>
+            <%= f.file_field :attachment, {:multiple => true} %>
+        </span>
+
+        <button type="submit" class="icon-upload button start"><%= t('multi_upload.start') %></button>
+        <button type="reset" class="icon-ban-circle button cancel"><%= t('multi_upload.cancel') %></button>
+
+      </div>
+
+      <div class="fileupload-progress fade">
+        <div class="progress-extended">&nbsp;</div>
+      </div>
+
+      <br />
+
+      <table role="presentation" class="table table-striped">
+        <tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody>
+      </table>
+
+    </fieldset>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('#fileupload').fileupload();
+    });
+</script>
+
+<%= render :partial => 'template_upload' %>
+<%= render :partial => 'template_download' %>
+

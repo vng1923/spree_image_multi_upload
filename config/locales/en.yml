@@ -1,0 +1,15 @@
+en:
+  multi_upload:
+    title: 'Advanced Images Upload'
+    add_files: 'Add files...'
+    start: 'Start upload'
+    cancel: 'Cancel upload'
+    destroy: 'Delete'
+    errors:
+      max_file_size: 'File is too big'
+      min_file_size: 'File is too small'
+      accept_file_types: 'Filetype not allowed'
+      max_number_of_files: 'Max number of files exceeded'
+      uploaded_bytes: 'Uploaded bytes exceed file size'
+      empty_result: 'Empty file upload result'
+

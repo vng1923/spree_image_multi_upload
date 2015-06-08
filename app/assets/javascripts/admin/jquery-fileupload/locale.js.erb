@@ -1,0 +1,30 @@
+<%# encoding: utf-8 %>
+/*
+ * jQuery File Upload Plugin Localization Example 6.5.1
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2012, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+/*global window */
+
+window.locale = {
+    "fileupload": {
+        "errors": {
+            "maxFileSize": "<%= I18n.t('multi_upload.errors.max_file_size') %>",
+            "minFileSize": "<%= I18n.t('multi_upload.errors.min_file_size') %>",
+            "acceptFileTypes": "<%= I18n.t('multi_upload.errors.accept_file_types') %>",
+            "maxNumberOfFiles": "<%= I18n.t('multi_upload.errors.max_number_of_files') %>",
+            "uploadedBytes": "<%= I18n.t('multi_upload.errors.uploaded_bytes') %>",
+            "emptyResult": "<%= I18n.t('multi_upload.errors.empty_result') %>"
+        },
+        "error": "<%= I18n.t(:error) %>",
+        "start": "<%= I18n.t('multi_upload.start') %>",
+        "cancel": "<%= I18n.t('multi_upload.cancel') %>",
+        "destroy": "<%= I18n.t(:delete) %>"
+    }
+};
