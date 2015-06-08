@@ -22,11 +22,6 @@ Now bundle up with:
 bundle install
 ```
 
-Next, run the rake task that copies the necessary files to your project:
-```
-rails g spree_image_multi_upload:install
-```
-
 Now you should be able to boot up your server with:
 ```
 rails s
