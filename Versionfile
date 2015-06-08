@@ -1,1 +1,1 @@
-'1.3.x'  => { :branch => 'master' }
+'1.0.x'  => { :branch => 'master' }
