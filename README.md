@@ -1,7 +1,7 @@
 Spree Image Multi Upload
 =====================
 
-Allow to upload multi product images at the same time with drag&drop support.
+Allow Spree to upload multi product images at the same time
 
 Requirements
 ------------
