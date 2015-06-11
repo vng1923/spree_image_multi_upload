@@ -4,7 +4,6 @@ Spree::Admin::ImagesController.class_eval do
     
     product = Spree::Product.where('slug' => params['product_id'])
     params[object_name][:attachment].each do |attachment_object|
-      #binding.pry
       #@object.attributes = params[object_name]
       product = Spree::Product.where('slug' => params['product_id'])
       #@object = Spree::Image.create
@@ -14,9 +13,10 @@ Spree::Admin::ImagesController.class_eval do
 
       image = Spree::Image.new
       image.attachment = attachment_object
-      image.viewable_id = product[0].id
+      image.viewable_id = params[:image][:viewable_id] #product[0].id
       image.type = 'Spree::Image'
       image.viewable_type = 'Spree::Variant'
+      #binding.pry
       image.save
 
       #invoke_callbacks(:create, :before)
