@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_image_multi_upload'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.summary     = %q{Advanced product images uploader}
   s.description = %q{Allow Spree to upload multi product images at the same time}
   s.required_ruby_version = '>= 2.0.0'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.3'
+  s.add_dependency 'spree_core'
 
   s.add_development_dependency 'capybara'#, '~> 1.1.2'
   s.add_development_dependency 'factory_girl'#, '~> 2.6.4'
